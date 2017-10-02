@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\dbravo\\AndroidStudioProjects\\BLEandRelaySample\\Application\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\dbravo\\.android\\build-cache\\f30e234607f55d0c5a4240384f1127287e415241\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\dbravo\\AndroidStudioProjects\\BLEandRelaySample\\Application\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\dbravo\\.android\\build-cache\\f30e234607f55d0c5a4240384f1127287e415241\\output\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\dbravo\\AndroidStudioProjects\\BLEandRelaySample\\Application\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\dbravo\\.android\\build-cache\\f30e234607f55d0c5a4240384f1127287e415241\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\dbravo\\AndroidStudioProjects\\BLEandRelaySample\\Application\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\dbravo\\.android\\build-cache\\f30e234607f55d0c5a4240384f1127287e415241\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    }
+]

@@ -1,0 +1,111 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:20:1-50:12
+	package
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:21:5-50
+	android:versionName
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:23:5-30
+		INJECTED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:22:5-28
+		INJECTED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:20:11-69
+uses-feature#android.hardware.bluetooth_le
+ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:31:5-89
+	android:required
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:31:64-87
+	android:name
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:31:19-63
+uses-permission#android.permission.BLUETOOTH
+ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:33:5-67
+	android:name
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:33:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:34:5-73
+	android:name
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:34:22-71
+application
+ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:36:5-48:19
+MERGED from [com.android.support:support-v13:25.3.1] C:\Users\dbravo\.android\build-cache\56deedbe95b562b6ecc303dd55bfb943a9f022cb\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\dbravo\.android\build-cache\87d178a98818451eeda566b996788a019d4861f0\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\dbravo\.android\build-cache\f30e234607f55d0c5a4240384f1127287e415241\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\dbravo\.android\build-cache\e9e94efd76442e1e5086efdd199be5b0e7bac2c7\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\dbravo\.android\build-cache\8498622ff951f4dc2dd3d46878b1ceab510e7d5b\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\dbravo\.android\build-cache\972f0856020e6931fc349c560df407663393ed26\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\dbravo\.android\build-cache\aef450f6eb41ca4a7c4bf31449594f868ad5c662\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\dbravo\.android\build-cache\61c1269bf4aa861aa053585ba3157d94279c4f13\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\dbravo\.android\build-cache\55b6b6f53bc4f3220c39485d33508b7e9bcf959c\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\dbravo\.android\build-cache\a2da3fd5479d1c2b627f1cb2dbfd6a6e92f0780d\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\dbravo\.android\build-cache\67c68de40b7d4595d4b561224fda3dd897190f75\output\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:36:18-50
+	android:icon
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:37:9-45
+	android:theme
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:38:9-56
+activity#com.example.android.bluetoothlegatt.DeviceScanActivity
+ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:39:9-45:20
+	android:label
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:40:13-45
+	android:name
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:39:19-53
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:41:13-44:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:42:17-68
+	android:name
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:42:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:43:17-76
+	android:name
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:43:27-74
+activity#com.example.android.bluetoothlegatt.DeviceControlActivity
+ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:46:9-58
+	android:name
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:46:19-56
+service#com.example.android.bluetoothlegatt.BluetoothLeService
+ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:47:9-77
+	android:enabled
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:47:53-75
+	android:name
+		ADDED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml:47:18-52
+uses-sdk
+INJECTED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:support-v13:25.3.1] C:\Users\dbravo\.android\build-cache\56deedbe95b562b6ecc303dd55bfb943a9f022cb\output\AndroidManifest.xml:21:5-23:55
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\dbravo\.android\build-cache\87d178a98818451eeda566b996788a019d4861f0\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\dbravo\.android\build-cache\f30e234607f55d0c5a4240384f1127287e415241\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\dbravo\.android\build-cache\e9e94efd76442e1e5086efdd199be5b0e7bac2c7\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\dbravo\.android\build-cache\8498622ff951f4dc2dd3d46878b1ceab510e7d5b\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\dbravo\.android\build-cache\972f0856020e6931fc349c560df407663393ed26\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\dbravo\.android\build-cache\aef450f6eb41ca4a7c4bf31449594f868ad5c662\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\dbravo\.android\build-cache\61c1269bf4aa861aa053585ba3157d94279c4f13\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\dbravo\.android\build-cache\55b6b6f53bc4f3220c39485d33508b7e9bcf959c\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\dbravo\.android\build-cache\a2da3fd5479d1c2b627f1cb2dbfd6a6e92f0780d\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\dbravo\.android\build-cache\67c68de40b7d4595d4b561224fda3dd897190f75\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v13:25.3.1] C:\Users\dbravo\.android\build-cache\56deedbe95b562b6ecc303dd55bfb943a9f022cb\output\AndroidManifest.xml:23:9-52
+	android:targetSdkVersion
+		INJECTED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:support-v13:25.3.1] C:\Users\dbravo\.android\build-cache\56deedbe95b562b6ecc303dd55bfb943a9f022cb\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\dbravo\.android\build-cache\87d178a98818451eeda566b996788a019d4861f0\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\dbravo\.android\build-cache\f30e234607f55d0c5a4240384f1127287e415241\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\dbravo\.android\build-cache\e9e94efd76442e1e5086efdd199be5b0e7bac2c7\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\dbravo\.android\build-cache\8498622ff951f4dc2dd3d46878b1ceab510e7d5b\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\dbravo\.android\build-cache\972f0856020e6931fc349c560df407663393ed26\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\dbravo\.android\build-cache\aef450f6eb41ca4a7c4bf31449594f868ad5c662\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\dbravo\.android\build-cache\61c1269bf4aa861aa053585ba3157d94279c4f13\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\dbravo\.android\build-cache\55b6b6f53bc4f3220c39485d33508b7e9bcf959c\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\dbravo\.android\build-cache\a2da3fd5479d1c2b627f1cb2dbfd6a6e92f0780d\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\dbravo\.android\build-cache\67c68de40b7d4595d4b561224fda3dd897190f75\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:support-v13:25.3.1] C:\Users\dbravo\.android\build-cache\56deedbe95b562b6ecc303dd55bfb943a9f022cb\output\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:support-v13:25.3.1] C:\Users\dbravo\.android\build-cache\56deedbe95b562b6ecc303dd55bfb943a9f022cb\output\AndroidManifest.xml:26:9-47
