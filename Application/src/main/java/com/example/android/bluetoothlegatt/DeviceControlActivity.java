@@ -38,6 +38,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * For a given BLE device, this Activity provides the user interface to connect, display data,
@@ -258,6 +259,7 @@ public class DeviceControlActivity extends Activity {
         for (BluetoothGattService gattService : gattServices) {
             HashMap<String, String> currentServiceData = new HashMap<String, String>();
             uuid = gattService.getUuid().toString();
+
             currentServiceData.put(
                     LIST_NAME, SampleGattAttributes.lookup(uuid, unknownServiceString));
             currentServiceData.put(LIST_UUID, uuid);
@@ -275,9 +277,17 @@ public class DeviceControlActivity extends Activity {
                 charas.add(gattCharacteristic);
                 HashMap<String, String> currentCharaData = new HashMap<String, String>();
                 uuid = gattCharacteristic.getUuid().toString();
+                UUID real_uuid = gattCharacteristic.getUuid();
+
+                /*
                 currentCharaData.put(
                         LIST_NAME, SampleGattAttributes.lookup(uuid, unknownCharaString));
                 currentCharaData.put(LIST_UUID, uuid);
+                */
+                currentCharaData.put(
+                        LIST_NAME, SampleGattAttributes.lookup(uuid, getCharacteristicString(real_uuid)));
+                currentCharaData.put(LIST_UUID, uuid);
+
                 gattCharacteristicGroupData.add(currentCharaData);
             }
             mGattCharacteristics.add(charas);
@@ -305,5 +315,37 @@ public class DeviceControlActivity extends Activity {
         intentFilter.addAction(BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED);
         intentFilter.addAction(BluetoothLeService.ACTION_DATA_AVAILABLE);
         return intentFilter;
+    }
+
+    private String getCharacteristicString(UUID uuid) {
+
+        /*  Generic access
+            0x1800
+            Primary service
+
+            Device Name
+            UUID: 00002a00-0000-1000-8000-00805F9b34fb
+            Properties: Read
+
+            Appearance
+            UUID: 00002a01-0000-1000-8000-00805F9b34fb
+            Properties: Read
+
+            Peripheral preferred connection parameters
+            UUID: 00002a04-0000-1000-8000-00805F9b34fb
+            Properties: Read
+
+         */
+        String service = getResources().getString(R.string.unknown_characteristic);
+
+        if(uuid.equals(UUID.fromString("00002a00-0000-1000-8000-00805f9b34fb"))){
+            service = "Device Name";
+        }else if(uuid.equals(UUID.fromString("00002a01-0000-1000-8000-00805f9b34fb"))){
+            service = "Appearance";
+        }else if(uuid.equals(UUID.fromString("00002a04-0000-1000-8000-00805f9b34fb"))){
+            service = "Peripheral preferred connection parameters";
+        }
+
+        return service;
     }
 }
