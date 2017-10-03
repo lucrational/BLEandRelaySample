@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\dbravo\.android\build-cache\f30e234607f55d0c5a4240384f1127287e415241\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\pre-dexed\debug\classes_72c8db33fa0c9cbeae79de9a1846b092ae2122c2.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\.android\build-cache\f30e234607f55d0c5a4240384f1127287e415241\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_72c8db33fa0c9cbeae79de9a1846b092ae2122c2\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dbravo\.android\build-cache\e9e94efd76442e1e5086efdd199be5b0e7bac2c7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\pre-dexed\debug\classes_cdabf3b15bb458d3f0ce3def24394fe2446c4f15.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\.android\build-cache\e9e94efd76442e1e5086efdd199be5b0e7bac2c7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cdabf3b15bb458d3f0ce3def24394fe2446c4f15\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_d5c746ba672e10ad9336a749cdeb987130a4c067\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dbravo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_d5c746ba672e10ad9336a749cdeb987130a4c067.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dbravo\.android\build-cache\87d178a98818451eeda566b996788a019d4861f0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\pre-dexed\debug\classes_8d273fb38edb779df8e701a2d151a0727dc95687.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_6cc889b2a4cbcf1831b5fdd203a1dc153c9092f2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\.android\build-cache\87d178a98818451eeda566b996788a019d4861f0\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8d273fb38edb779df8e701a2d151a0727dc95687\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\.android\build-cache\55b6b6f53bc4f3220c39485d33508b7e9bcf959c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6e8cc4969cd010ab3af247b187614fe02cd378c4\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dbravo\.android\build-cache\972f0856020e6931fc349c560df407663393ed26\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\pre-dexed\debug\classes_968d2c43ca0095d570ea2828d6394b245d5010f6.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\.android\build-cache\8498622ff951f4dc2dd3d46878b1ceab510e7d5b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_534f60592dab9387958766e879847fa6f9b7ce64\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dbravo\.android\build-cache\8498622ff951f4dc2dd3d46878b1ceab510e7d5b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\pre-dexed\debug\classes_534f60592dab9387958766e879847fa6f9b7ce64.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\.android\build-cache\972f0856020e6931fc349c560df407663393ed26\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_968d2c43ca0095d570ea2828d6394b245d5010f6\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dbravo\.android\build-cache\55b6b6f53bc4f3220c39485d33508b7e9bcf959c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\pre-dexed\debug\classes_6e8cc4969cd010ab3af247b187614fe02cd378c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dbravo\.android\build-cache\67c68de40b7d4595d4b561224fda3dd897190f75\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\pre-dexed\debug\classes_fef77781a135eb50f15e1b01ff1edb1d83647b24.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\.android\build-cache\a2da3fd5479d1c2b627f1cb2dbfd6a6e92f0780d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_12e1c3bad2f78d36f84a02f3fe3582e7459f3951\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\.android\build-cache\aef450f6eb41ca4a7c4bf31449594f868ad5c662\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_164f95cded3e8566e109fc5f0c6e13515b3df842\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\.android\build-cache\56deedbe95b562b6ecc303dd55bfb943a9f022cb\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8531f2d46b35de75e6130f25830e0c2c0d6bb98c">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2fab852c9e52933d75755c30669bc0fd373eed20\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dbravo\.android\build-cache\a2da3fd5479d1c2b627f1cb2dbfd6a6e92f0780d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\pre-dexed\debug\classes_12e1c3bad2f78d36f84a02f3fe3582e7459f3951.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dbravo\.android\build-cache\61c1269bf4aa861aa053585ba3157d94279c4f13\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\pre-dexed\debug\classes_2eb870d0a0f37cb902cc5303b3d55bf976a365f4.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f86dd265e2e196136025a52bb34dbed14a17a11a">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_dfb6ec35e6cdddce5f83ddebcffad4c38bb92019\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\.android\build-cache\67c68de40b7d4595d4b561224fda3dd897190f75\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fef77781a135eb50f15e1b01ff1edb1d83647b24\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dbravo\.android\build-cache\aef450f6eb41ca4a7c4bf31449594f868ad5c662\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\pre-dexed\debug\classes_164f95cded3e8566e109fc5f0c6e13515b3df842.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dbravo\.android\build-cache\61c1269bf4aa861aa053585ba3157d94279c4f13\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2eb870d0a0f37cb902cc5303b3d55bf976a365f4\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dbravo\.android\build-cache\56deedbe95b562b6ecc303dd55bfb943a9f022cb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8531f2d46b35de75e6130f25830e0c2c0d6bb98c">
+        <dex dex="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\pre-dexed\debug\classes_2fab852c9e52933d75755c30669bc0fd373eed20.jar" />
+    </item>
+
+</items>

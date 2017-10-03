@@ -1,0 +1,7 @@
+#Tue Oct 03 15:51:24 CEST 2017
+base.0=C\:\\Users\\dbravo\\AndroidStudioProjects\\BLEandRelaySample\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_6cc889b2a4cbcf1831b5fdd203a1dc153c9092f2
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\dbravo\\AndroidStudioProjects\\BLEandRelaySample\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_dfb6ec35e6cdddce5f83ddebcffad4c38bb92019\\classes.dex
+base.1=C\:\\Users\\dbravo\\AndroidStudioProjects\\BLEandRelaySample\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_dfb6ec35e6cdddce5f83ddebcffad4c38bb92019
+file.0=C\:\\Users\\dbravo\\AndroidStudioProjects\\BLEandRelaySample\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_6cc889b2a4cbcf1831b5fdd203a1dc153c9092f2\\classes.dex
