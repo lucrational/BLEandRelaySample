@@ -1,4 +1,4 @@
-#Tue Oct 03 15:51:24 CEST 2017
+#Tue Oct 03 18:11:45 CEST 2017
 base.0=C\:\\Users\\dbravo\\AndroidStudioProjects\\BLEandRelaySample\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_6cc889b2a4cbcf1831b5fdd203a1dc153c9092f2
 renamed.1=classes.dex
 renamed.0=classes2.dex

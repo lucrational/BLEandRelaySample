@@ -54,8 +54,8 @@ public class DeviceControlActivity extends Activity {
 
     private TextView mConnectionState;
     private TextView mDataField;
-    private TextView mCmdDataField;
-    private Button mCmdButton;
+    //private TextView mCmdDataField;
+    //private Button mCmdButton;
     private String mDeviceName;
     private String mDeviceAddress;
     private ExpandableListView mGattServicesList;
@@ -223,7 +223,7 @@ public class DeviceControlActivity extends Activity {
     private void clearUI() {
         mGattServicesList.setAdapter((SimpleExpandableListAdapter) null);
         mDataField.setText(R.string.no_data);
-        mCmdDataField.setText("No CMD data");
+        //mCmdDataField.setText("No CMD data");
     }
 
     @Override
@@ -242,8 +242,8 @@ public class DeviceControlActivity extends Activity {
         mConnectionState = (TextView) findViewById(R.id.connection_state);
         mDataField = (TextView) findViewById(R.id.data_value);
         ////////////////
-        mCmdDataField = (TextView) findViewById(R.id.data_c_value);
         /*
+        mCmdDataField = (TextView) findViewById(R.id.data_c_value);
         mCmdButton = (Button)findViewById(R.id.run_cmd);
         mCmdButton.setOnClickListener(listener);
         */
@@ -320,13 +320,13 @@ public class DeviceControlActivity extends Activity {
             mDataField.setText(data);
         }
     }
-
+/*
     private void displayCmdData(String data) {
         if (data != null) {
             mCmdDataField.setText(data);
         }
     }
-
+*/
     // Demonstrates how to iterate through the supported GATT Services/Characteristics.
     // In this sample, we populate the data structure that is bound to the ExpandableListView
     // on the UI.

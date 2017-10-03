@@ -6,22 +6,22 @@
     density="xhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1507038926340"
+    timestamp="1507048036325"
     token="-7166387733933644664"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="11259" />
+        duration="1039" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="158" />
+        duration="82" />
     <task
         name="verifier"
-        duration="16" />
+        duration="42" />
 
     <artifact
         location="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
@@ -29,7 +29,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1507017058821"
+        timestamp="1507041899394"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
@@ -70,15 +70,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1507027333880"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1507038638617"
+        timestamp="1507047064670"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\outputs\apk\Application-debug.apk"
@@ -86,7 +78,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1507038926340"
+        timestamp="1507048036325"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\dbravo\AndroidStudioProjects\BLEandRelaySample\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
