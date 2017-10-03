@@ -126,7 +126,12 @@ public class BluetoothLeService extends Service {
         // This is special handling for the Heart Rate Measurement profile.  Data parsing is
         // carried out as per profile specifications:
         // http://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.heart_rate_measurement.xml
-        if (UUID_HEART_RATE_MEASUREMENT.equals(characteristic.getUuid())) {
+        Log.i("LEER Y ESCRIBIR: ", characteristic.getUuid().toString());
+        if(characteristic.getUuid().toString().equals("0000ffe1-0000-1000-8000-00805f9b34fb")){
+
+            Log.i("LEER Y ESCRIBIR: ", "AQUIIIIIIIIIIIIIIIII");
+
+        }else if (UUID_HEART_RATE_MEASUREMENT.equals(characteristic.getUuid())) {
             int flag = characteristic.getProperties();
             int format = -1;
             if ((flag & 0x01) != 0) {
@@ -316,4 +321,19 @@ public class BluetoothLeService extends Service {
 
         return mBluetoothGatt.getServices();
     }
+/*
+    public void writeOnCharacteristic(BluetoothGattCharacteristic characteristic) {
+
+        if (mBluetoothAdapter == null || mBluetoothGatt == null) {
+            Log.w(TAG, "BluetoothAdapter not initialized");
+            return;
+        }
+        mBluetoothGatt.setCharacteristicNotification(characteristic, true);
+
+        BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
+                    UUID.fromString("0000ffe1-0000-1000-8000-00805f9b34fb"));
+        descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
+        mBluetoothGatt.writeDescriptor(descriptor);
+    }
+*/
 }

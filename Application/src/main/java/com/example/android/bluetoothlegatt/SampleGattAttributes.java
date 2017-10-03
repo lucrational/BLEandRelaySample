@@ -16,6 +16,8 @@
 
 package com.example.android.bluetoothlegatt;
 
+import android.util.Log;
+
 import java.util.HashMap;
 
 /**
@@ -30,9 +32,35 @@ public class SampleGattAttributes {
         // Sample Services.
         attributes.put("0000180d-0000-1000-8000-00805f9b34fb", "Heart Rate Service");
         attributes.put("0000180a-0000-1000-8000-00805f9b34fb", "Device Information Service");
+
+        attributes.put("00001800-0000-1000-8000-00805f9b34fb", "Generic access");
+        attributes.put("00001801-0000-1000-8000-00805f9b34fb", "Generic attribute");
+        attributes.put("0000ffe0-0000-1000-8000-00805f9b34fb", "Custom service");
+        attributes.put("0000b000-0000-1000-8000-00805f9b34fb", "Custom service");
+
         // Sample Characteristics.
         attributes.put(HEART_RATE_MEASUREMENT, "Heart Rate Measurement");
         attributes.put("00002a29-0000-1000-8000-00805f9b34fb", "Manufacturer Name String");
+
+        attributes.put("00002a00-0000-1000-8000-00805f9b34fb", "Device Name");
+        attributes.put("00002a01-0000-1000-8000-00805f9b34fb", "Appearance");
+        attributes.put("00002a04-0000-1000-8000-00805f9b34fb", "Peripheral");
+
+        attributes.put("00002a05-0000-1000-8000-00805f9b34fb", "Service changed");
+        // -------------------------------
+        attributes.put("0000ffe1-0000-1000-8000-00805f9b34fb", "Custom characteristic");
+        // 0xFFE1
+        // AT - AT+ADDR? - etc
+
+        // Properties: READ, NOTIFY, WRITE_NO_RESPONS
+        // Write Type: WRITE REQUEST
+        // Descriptors:
+        // Characteristics User Description
+        // UUID: 0x2901
+        // Client Characteristic Configuration
+        // UUID: 0x2902
+        // -------------------------------
+        attributes.put("0000b001-0000-1000-8000-00805f9b34fb", "Weight scale measurement");
     }
 
     public static String lookup(String uuid, String defaultName) {
