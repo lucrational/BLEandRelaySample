@@ -32,9 +32,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,10 +56,12 @@ public class DeviceControlActivity extends Activity {
 
     private TextView mConnectionState;
     private TextView mDataField;
-    //private TextView mCmdDataField;
-    //private Button mCmdButton;
+    private ToggleButton mToggleButton1;
+    private ToggleButton mToggleButton2;
+    private BluetoothGattCharacteristic cmdCharacteristic;
     private String mDeviceName;
     private String mDeviceAddress;
+    private String password;
     private ExpandableListView mGattServicesList;
     private BluetoothLeService mBluetoothLeService;
     private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
@@ -67,6 +71,12 @@ public class DeviceControlActivity extends Activity {
 
     private final String LIST_NAME = "NAME";
     private final String LIST_UUID = "UUID";
+    //private final byte[] devNameHeader = new byte[]{ (byte) 0xc5, (byte)0x10 };
+    private final byte[] open1Header = new byte[]{ (byte) 0xc5, (byte)0x04 };
+    private final byte[] close1Header = new byte[]{ (byte) 0xc5, (byte)0x06 };
+    private final byte[] open2Header = new byte[]{ (byte) 0xc5, (byte)0x05 };
+    private final byte[] close2Header = new byte[]{ (byte) 0xc5, (byte)0x07 };
+    private final byte[] tail = new byte[]{ (byte) 0xaa };
 
     // Code to manage Service lifecycle.
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
@@ -111,17 +121,7 @@ public class DeviceControlActivity extends Activity {
                 // Show all the supported services and characteristics on the user interface.
                 displayGattServices(mBluetoothLeService.getSupportedGattServices());
             } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) {
-
                 displayData(intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
-                //displayCmdData(action);
-
-                //Log.i("events", "action: " + action);
-                //Log.i("events", "data: " + intent.getData().toString());
-                //Log.i("events", "DataString: " + intent.getDataString() == null ? "null" : intent.getDataString());
-                //Log.i("events", "Type: " + intent.getType());
-                //Log.i("events", "Flags: " + String.valueOf(intent.getFlags()));
-                //Log.i("events", "Scheme: " + intent.getScheme());
-                //Log.i("events", "StringExtra: " + intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
             }
         }
     };
@@ -160,70 +160,67 @@ public class DeviceControlActivity extends Activity {
                             mBluetoothLeService.setCharacteristicNotification(
                                     characteristic, true);
                         }
-/*
-                        Log.i("Property", String.valueOf(charaProp));
-                        Log.i("Property", String.valueOf(BluetoothGattCharacteristic.PROPERTY_WRITE));
-                        Log.i("Property", String.valueOf(BluetoothGattCharacteristic.PROPERTY_WRITE_NO_RESPONSE));
-
-                        if ((charaProp | BluetoothGattCharacteristic.PROPERTY_WRITE) > 0) {
-                            Log.i("Property", "WRITE");
-                        }
-                        if ((charaProp | BluetoothGattCharacteristic.PROPERTY_WRITE_NO_RESPONSE) > 0) {
-                            Log.i("Property", "WRITE_NO_RESPONSE");
-                        }
- */
                         return true;
                     }
 
                     return false;
                 }
     };
-/*
-    private final View.OnClickListener listener = new View.OnClickListener(){
+
+            ////////////////////
+            // AT = 0x410x54
+            // String dataString = "AT";
+            // String deviceName = "Default";
+            // OldName = ZL_RELAY02 = 5A 4C 5F 52 45 4C 41 59 30 32 = 0x5a0x4c0x5f0x520x450x4c0x410x590x300x32
+            // deviceName = "ZL_RELAY02";
+            // NewName = AccessDoor = 41 63 63 65 73 73 44 6F 6F 72 = 0x410x630x630x650x730x730x440x6f0x6f0x72
+            // deviceName = "AccessDoor";
+            // password = "12345678";
+
+    private final ToggleButton.OnCheckedChangeListener toggleListener =
+            new ToggleButton.OnCheckedChangeListener() {
+
         @Override
-        public void onClick(View v) {
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            //Log.i("TOGGLE: ", buttonView.isChecked() ? "ON" : "OFF");
+            byte[] data = new byte[]{};
+            if(cmdCharacteristic != null){
+                switch (buttonView.getId()) {
+                    case R.id.toggleRelay1:
+                        if(buttonView.isChecked()){
+                            data = concatenateByteArrays(open1Header, password.getBytes());
+                        }else{
+                            data = concatenateByteArrays(close1Header, password.getBytes());
+                        }
+                        break;
+                    case R.id.toggleRelay2:
 
-            displayCmdData("Perfect Testing");
-            //ArrayList<ArrayList<BluetoothGattCharacteristic>>
-            //mGattCharacteristics.
-
-            Log.i("AQUI", "size i: " + mGattCharacteristics.size());
-            for (int i = 0; i < mGattCharacteristics.size(); i++){
-                Log.i("AQUI", "size j : " + mGattCharacteristics.size());
-                for (int j = 0; j < mGattCharacteristics.get(i).size(); j++){
-                    BluetoothGattCharacteristic characteristic = mGattCharacteristics.get(i).get(j);
-                    String uuid = characteristic.getUuid().toString();
-                    Log.i("AQUI", "uuid: " + uuid);
-                    if(uuid.equals("0000ffe1-0000-1000-8000-00805f9b34fb")){
-                        Log.i("AQUI", "ESTE!! " + uuid);
-                        //mBluetoothLeService.writeOnCharacteristic(characteristic);
-                    }
+                        if(buttonView.isChecked()){
+                            data = concatenateByteArrays(open2Header, password.getBytes());
+                        }else{
+                            data = concatenateByteArrays(close2Header, password.getBytes());
+                        }
+                        break;
                 }
+                data = concatenateByteArrays(data, tail);
+                cmdCharacteristic.setValue(data);
+                cmdCharacteristic.setWriteType(BluetoothGattCharacteristic.WRITE_TYPE_NO_RESPONSE);
+                boolean result = mBluetoothLeService.writeCharacteristic(cmdCharacteristic);
+                Log.i("result: ", result ? "true" : "false");
             }
-
-            //BluetoothGattCharacteristic characteristic;
-            //mBluetoothLeService.writeOnCharacteristic(characteristic);
-
-            // "0000ffe1-0000-1000-8000-00805f9b34fb"
-            // 0xFFE1
-            // AT - AT+ADDR? - etc
-            // Properties: READ, NOTIFY, WRITE_NO_RESPONS
-            // Write Type: WRITE REQUEST
-            // Descriptors:
-            // Characteristics User Description
-            // UUID: 0x2901
-            // Client Characteristic Configuration
-            // UUID: 0x2902
-            // -------------------------------
-
-
         }
     };
-*/
+
+    private byte[] concatenateByteArrays(byte[] a, byte[] b) {
+        byte[] result = new byte[a.length + b.length];
+        System.arraycopy(a, 0, result, 0, a.length);
+        System.arraycopy(b, 0, result, a.length, b.length);
+        return result;
+    }
+
     private void clearUI() {
         mGattServicesList.setAdapter((SimpleExpandableListAdapter) null);
         mDataField.setText(R.string.no_data);
-        //mCmdDataField.setText("No CMD data");
     }
 
     @Override
@@ -242,11 +239,12 @@ public class DeviceControlActivity extends Activity {
         mConnectionState = (TextView) findViewById(R.id.connection_state);
         mDataField = (TextView) findViewById(R.id.data_value);
         ////////////////
-        /*
-        mCmdDataField = (TextView) findViewById(R.id.data_c_value);
-        mCmdButton = (Button)findViewById(R.id.run_cmd);
-        mCmdButton.setOnClickListener(listener);
-        */
+        mToggleButton1 = (ToggleButton) findViewById(R.id.toggleRelay1);
+        mToggleButton1.setOnCheckedChangeListener(toggleListener);
+        mToggleButton2 = (ToggleButton) findViewById(R.id.toggleRelay2);
+        mToggleButton2.setOnCheckedChangeListener(toggleListener);
+        // Default password
+        password = "12345678";
         /////////////////
         getActionBar().setTitle(mDeviceName);
         getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -320,13 +318,7 @@ public class DeviceControlActivity extends Activity {
             mDataField.setText(data);
         }
     }
-/*
-    private void displayCmdData(String data) {
-        if (data != null) {
-            mCmdDataField.setText(data);
-        }
-    }
-*/
+
     // Demonstrates how to iterate through the supported GATT Services/Characteristics.
     // In this sample, we populate the data structure that is bound to the ExpandableListView
     // on the UI.
@@ -368,6 +360,11 @@ public class DeviceControlActivity extends Activity {
                 currentCharaData.put(LIST_UUID, uuid);
 
                 gattCharacteristicGroupData.add(currentCharaData);
+
+                if(uuid.equals(SampleGattAttributes.CMD_CHARACTERISTIC)){
+                    Log.i("displayGattServices", "CMD Characteristics: " + uuid);
+                    cmdCharacteristic = gattCharacteristic;
+                }
             }
             mGattCharacteristics.add(charas);
             gattCharacteristicData.add(gattCharacteristicGroupData);

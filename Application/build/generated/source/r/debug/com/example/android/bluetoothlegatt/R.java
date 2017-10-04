@@ -1989,7 +1989,6 @@ containing a value of this type.
         public static final int contentPanel=0x7f0a0031;
         public static final int custom=0x7f0a0038;
         public static final int customPanel=0x7f0a0037;
-        public static final int data_c_value=0x7f0a0057;
         public static final int data_value=0x7f0a005a;
         public static final int decor_content_parent=0x7f0a0045;
         public static final int default_activity_button=0x7f0a002a;
@@ -2033,7 +2032,6 @@ containing a value of this type.
         public static final int radio=0x7f0a0040;
         public static final int right_icon=0x7f0a006c;
         public static final int right_side=0x7f0a0067;
-        public static final int run_cmd=0x7f0a0056;
         public static final int screen=0x7f0a0015;
         public static final int scrollIndicatorDown=0x7f0a0036;
         public static final int scrollIndicatorUp=0x7f0a0032;
@@ -2070,6 +2068,8 @@ containing a value of this type.
         public static final int title=0x7f0a002d;
         public static final int titleDividerNoCustom=0x7f0a003c;
         public static final int title_template=0x7f0a003a;
+        public static final int toggleRelay1=0x7f0a0056;
+        public static final int toggleRelay2=0x7f0a0057;
         public static final int top=0x7f0a0023;
         public static final int topPanel=0x7f0a0039;
         public static final int up=0x7f0a0008;
@@ -2176,21 +2176,22 @@ containing a value of this type.
         public static final int disconnected=0x7f050024;
         public static final int error_bluetooth_not_supported=0x7f050025;
         public static final int intro_message=0x7f050026;
-        public static final int label_c_data=0x7f050027;
-        public static final int label_data=0x7f050028;
-        public static final int label_device_address=0x7f050029;
-        public static final int label_state=0x7f05002a;
-        public static final int menu_connect=0x7f05002b;
-        public static final int menu_disconnect=0x7f05002c;
-        public static final int menu_scan=0x7f05002d;
-        public static final int menu_stop=0x7f05002e;
-        public static final int no_data=0x7f05002f;
+        public static final int label_data=0x7f050027;
+        public static final int label_device_address=0x7f050028;
+        public static final int label_relay1=0x7f050029;
+        public static final int label_relay2=0x7f05002a;
+        public static final int label_state=0x7f05002b;
+        public static final int menu_connect=0x7f05002c;
+        public static final int menu_disconnect=0x7f05002d;
+        public static final int menu_scan=0x7f05002e;
+        public static final int menu_stop=0x7f05002f;
+        public static final int no_data=0x7f050030;
         public static final int search_menu_title=0x7f050013;
         public static final int status_bar_notification_info_overflow=0x7f050014;
-        public static final int title_devices=0x7f050030;
-        public static final int unknown_characteristic=0x7f050031;
-        public static final int unknown_device=0x7f050032;
-        public static final int unknown_service=0x7f050033;
+        public static final int title_devices=0x7f050031;
+        public static final int unknown_characteristic=0x7f050032;
+        public static final int unknown_device=0x7f050033;
+        public static final int unknown_service=0x7f050034;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0700a2;

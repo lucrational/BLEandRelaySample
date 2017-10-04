@@ -103,57 +103,7 @@ public class BluetoothLeService extends Service {
         public void onCharacteristicRead(BluetoothGatt gatt,
                                          BluetoothGattCharacteristic characteristic,
                                          int status) {
-
-            if(characteristic.getUuid().toString().equals("0000ffe1-0000-1000-8000-00805f9b34fb")){
-
-                Log.i("onCharacteristicRead: ", "CMD");
-                Log.i("onCharacteristicRead: ", gatt.toString());
-                Log.i("onCharacteristicRead: ", gatt.getDevice().getAddress());
-                Log.i("onCharacteristicRead: ", gatt.getDevice().getName());
-                Log.i("onCharacteristicRead: ", String.valueOf(gatt.getDevice().getType()));
-
-                ////////////////////
-                // AT = 0x410x54
-                String dataString = "AT";
-
-                /*
-                To change the device name (without the aid of a password, Numbers and letters, digits custom, 10 characters)
-                    The data format for:  C5 10 XX XX XX AA
-                    The red XX for hexadecimal Numbers and letters
-
-                 */
-
-                // OldName = ZL_RELAY02 = 5A 4C 5F 52 45 4C 41 59 30 32 = 0x5a0x4c0x5f0x520x450x4c0x410x590x300x32
-                // NewName = AccessDoor = 41 63 63 65 73 73 44 6F 6F 72 = 0x410x630x630x650x730x730x440x6f0x6f0x72
-                // dataString = "AccessDoor";
-
-                // byte[] data = dataString.getBytes();
-
-                byte[] data = new byte[]{
-                        (byte) 0xc5, (byte)0x10,
-                        (byte)0x5a, (byte)0x4c, (byte)0x5f, (byte)0x52, (byte)0x45, (byte)0x4c,
-                        (byte)0x41, (byte)0x59, (byte)0x30, (byte)0x32,
-                        (byte) 0xaa
-                };
-/*
-                byte[] data = new byte[]{
-                        (byte) 0xc5, (byte)0x10,
-                        (byte)0x41, (byte)0x63, (byte)0x63, (byte)0x65, (byte)0x73, (byte)0x73,
-                        (byte)0x44, (byte)0x6f, (byte)0x6f, (byte)0x72,
-                        (byte) 0xaa
-                };
-*/
-                characteristic.setValue(data);
-                characteristic.setWriteType(BluetoothGattCharacteristic.WRITE_TYPE_NO_RESPONSE);
-                boolean result = gatt.writeCharacteristic(characteristic);
-                Log.i("result: ", result ? "true" : "false");
-
-                /////////////////////////////
-
-                if (status == BluetoothGatt.GATT_SUCCESS) {
-                    broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
-                }
-            }else if (status == BluetoothGatt.GATT_SUCCESS) {
+            if (status == BluetoothGatt.GATT_SUCCESS) {
                 broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
             }
         }
@@ -205,7 +155,6 @@ public class BluetoothLeService extends Service {
                 for(byte byteChar : data)
                     stringBuilder.append(String.format("%02X ", byteChar));
 
-                Log.i("putExtra: ", new String(data) + "\n" + stringBuilder.toString());
                 intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
             }
         }
@@ -340,6 +289,29 @@ public class BluetoothLeService extends Service {
             return;
         }
         mBluetoothGatt.readCharacteristic(characteristic);
+    }
+
+    /**
+     * TO DO documentation
+     *
+     * @param characteristic The characteristic to write to.
+     */
+    public boolean writeCharacteristic(BluetoothGattCharacteristic characteristic) {
+        boolean result = false;
+
+        if (mBluetoothAdapter == null || mBluetoothGatt == null) {
+            Log.w(TAG, "BluetoothAdapter not initialized");
+        }else{
+            if(mConnectionState == STATE_CONNECTED){
+                result = mBluetoothGatt.writeCharacteristic(characteristic);
+                if(!result)
+                    characteristic.setValue("ERROR".getBytes());
+            }else{
+                characteristic.setValue("Please connect first to BLE".getBytes());
+            }
+        }
+        broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
+        return result;
     }
 
     /**

@@ -1,4 +1,4 @@
-#Tue Oct 03 18:27:22 CEST 2017
+#Wed Oct 04 15:27:18 CEST 2017
 base.0=C\:\\Users\\dbravo\\AndroidStudioProjects\\BLEandRelaySample\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_9
 renamed.0=classes.dex
 file.0=C\:\\Users\\dbravo\\AndroidStudioProjects\\BLEandRelaySample\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_9\\classes.dex

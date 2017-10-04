@@ -374,9 +374,10 @@
         
         
     </string>
-    <string name="label_c_data">CMD data:</string>
     <string name="label_data">Data:</string>
     <string name="label_device_address">Device address:</string>
+    <string name="label_relay1">Relay 1:</string>
+    <string name="label_relay2">Relay 2:</string>
     <string name="label_state">State:</string>
     <string name="menu_connect">Connect</string>
     <string name="menu_disconnect">Disconnect</string>
