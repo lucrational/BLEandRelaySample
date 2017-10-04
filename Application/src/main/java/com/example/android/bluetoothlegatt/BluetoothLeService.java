@@ -103,6 +103,13 @@ public class BluetoothLeService extends Service {
         public void onCharacteristicRead(BluetoothGatt gatt,
                                          BluetoothGattCharacteristic characteristic,
                                          int status) {
+            /*if(characteristic.getUuid().toString().equals("0000ffe1-0000-1000-8000-00805f9b34fb")){
+                String dataString = "AT";
+                characteristic.setValue(dataString.getBytes());
+                characteristic.setWriteType(BluetoothGattCharacteristic.WRITE_TYPE_NO_RESPONSE);
+                boolean result = gatt.writeCharacteristic(characteristic);
+                Log.i("result: ", result ? "true" : "false");
+            }*/
             if (status == BluetoothGatt.GATT_SUCCESS) {
                 broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
             }
@@ -298,19 +305,11 @@ public class BluetoothLeService extends Service {
      */
     public boolean writeCharacteristic(BluetoothGattCharacteristic characteristic) {
         boolean result = false;
-
         if (mBluetoothAdapter == null || mBluetoothGatt == null) {
             Log.w(TAG, "BluetoothAdapter not initialized");
         }else{
-            if(mConnectionState == STATE_CONNECTED){
-                result = mBluetoothGatt.writeCharacteristic(characteristic);
-                if(!result)
-                    characteristic.setValue("ERROR".getBytes());
-            }else{
-                characteristic.setValue("Please connect first to BLE".getBytes());
-            }
+            result = mBluetoothGatt.writeCharacteristic(characteristic);
         }
-        broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
         return result;
     }
 
@@ -348,19 +347,4 @@ public class BluetoothLeService extends Service {
 
         return mBluetoothGatt.getServices();
     }
-/*
-    public void writeOnCharacteristic(BluetoothGattCharacteristic characteristic) {
-
-        if (mBluetoothAdapter == null || mBluetoothGatt == null) {
-            Log.w(TAG, "BluetoothAdapter not initialized");
-            return;
-        }
-        mBluetoothGatt.setCharacteristicNotification(characteristic, true);
-
-        BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
-                    UUID.fromString("0000ffe1-0000-1000-8000-00805f9b34fb"));
-        descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
-        mBluetoothGatt.writeDescriptor(descriptor);
-    }
-*/
 }

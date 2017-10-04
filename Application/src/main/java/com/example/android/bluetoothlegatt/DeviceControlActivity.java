@@ -33,6 +33,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
@@ -58,6 +59,8 @@ public class DeviceControlActivity extends Activity {
     private TextView mDataField;
     private ToggleButton mToggleButton1;
     private ToggleButton mToggleButton2;
+    private Button mCmdButton;
+    private EditText mCmdText;
     private BluetoothGattCharacteristic cmdCharacteristic;
     private String mDeviceName;
     private String mDeviceAddress;
@@ -130,7 +133,7 @@ public class DeviceControlActivity extends Activity {
     // demonstrates 'Read' and 'Notify' features.  See
     // http://d.android.com/reference/android/bluetooth/BluetoothGatt.html for the complete
     // list of supported characteristic features.
-    private final ExpandableListView.OnChildClickListener servicesListClickListner =
+    private final ExpandableListView.OnChildClickListener servicesListClickListener =
             new ExpandableListView.OnChildClickListener() {
                 @Override
                 public boolean onChildClick(ExpandableListView parent, View v, int groupPosition,
@@ -167,16 +170,6 @@ public class DeviceControlActivity extends Activity {
                 }
     };
 
-            ////////////////////
-            // AT = 0x410x54
-            // String dataString = "AT";
-            // String deviceName = "Default";
-            // OldName = ZL_RELAY02 = 5A 4C 5F 52 45 4C 41 59 30 32 = 0x5a0x4c0x5f0x520x450x4c0x410x590x300x32
-            // deviceName = "ZL_RELAY02";
-            // NewName = AccessDoor = 41 63 63 65 73 73 44 6F 6F 72 = 0x410x630x630x650x730x730x440x6f0x6f0x72
-            // deviceName = "AccessDoor";
-            // password = "12345678";
-
     private final ToggleButton.OnCheckedChangeListener toggleListener =
             new ToggleButton.OnCheckedChangeListener() {
 
@@ -194,7 +187,6 @@ public class DeviceControlActivity extends Activity {
                         }
                         break;
                     case R.id.toggleRelay2:
-
                         if(buttonView.isChecked()){
                             data = concatenateByteArrays(open2Header, password.getBytes());
                         }else{
@@ -204,10 +196,21 @@ public class DeviceControlActivity extends Activity {
                 }
                 data = concatenateByteArrays(data, tail);
                 cmdCharacteristic.setValue(data);
-                cmdCharacteristic.setWriteType(BluetoothGattCharacteristic.WRITE_TYPE_NO_RESPONSE);
                 boolean result = mBluetoothLeService.writeCharacteristic(cmdCharacteristic);
                 Log.i("result: ", result ? "true" : "false");
             }
+        }
+    };
+
+    private final View.OnClickListener cmdListener = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            String command = mCmdText.getText().toString();
+            cmdCharacteristic.setValue(command.getBytes());
+            boolean result = mBluetoothLeService.writeCharacteristic(cmdCharacteristic);
+            Log.i("result: ", result ? "true" : "false");
+            Log.d("CMD", "Output: " + command);
+            mCmdText.setText("");
         }
     };
 
@@ -235,7 +238,7 @@ public class DeviceControlActivity extends Activity {
         // Sets up UI references.
         ((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
         mGattServicesList = (ExpandableListView) findViewById(R.id.gatt_services_list);
-        mGattServicesList.setOnChildClickListener(servicesListClickListner);
+        mGattServicesList.setOnChildClickListener(servicesListClickListener);
         mConnectionState = (TextView) findViewById(R.id.connection_state);
         mDataField = (TextView) findViewById(R.id.data_value);
         ////////////////
@@ -243,8 +246,12 @@ public class DeviceControlActivity extends Activity {
         mToggleButton1.setOnCheckedChangeListener(toggleListener);
         mToggleButton2 = (ToggleButton) findViewById(R.id.toggleRelay2);
         mToggleButton2.setOnCheckedChangeListener(toggleListener);
+        mCmdButton = (Button) findViewById(R.id.cmdSend);
+        mCmdButton.setOnClickListener(cmdListener);
+        mCmdText = (EditText)findViewById(R.id.cmdText);
         // Default password
         password = "12345678";
+        setButtonsEnabled(false);
         /////////////////
         getActionBar().setTitle(mDeviceName);
         getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -296,6 +303,7 @@ public class DeviceControlActivity extends Activity {
                 return true;
             case R.id.menu_disconnect:
                 mBluetoothLeService.disconnect();
+                setButtonsEnabled(false);
                 return true;
             case android.R.id.home:
                 onBackPressed();
@@ -363,7 +371,10 @@ public class DeviceControlActivity extends Activity {
 
                 if(uuid.equals(SampleGattAttributes.CMD_CHARACTERISTIC)){
                     Log.i("displayGattServices", "CMD Characteristics: " + uuid);
+                    Log.i("cmdCharacteristic", "--------------------------------------------");
                     cmdCharacteristic = gattCharacteristic;
+                    cmdCharacteristic.setWriteType(BluetoothGattCharacteristic.WRITE_TYPE_NO_RESPONSE);
+                    mBluetoothLeService.setCharacteristicNotification(cmdCharacteristic, true);
                 }
             }
             mGattCharacteristics.add(charas);
@@ -382,6 +393,13 @@ public class DeviceControlActivity extends Activity {
                 new int[] { android.R.id.text1, android.R.id.text2 }
         );
         mGattServicesList.setAdapter(gattServiceAdapter);
+
+        if(cmdCharacteristic == null){
+            Log.i("cmdCharacteristic", "NULL");
+            displayData("BLE not registered on the system");
+        }else{
+            setButtonsEnabled(true);
+        }
     }
 
     private static IntentFilter makeGattUpdateIntentFilter() {
@@ -391,5 +409,12 @@ public class DeviceControlActivity extends Activity {
         intentFilter.addAction(BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED);
         intentFilter.addAction(BluetoothLeService.ACTION_DATA_AVAILABLE);
         return intentFilter;
+    }
+
+    private void setButtonsEnabled(boolean state){
+        mToggleButton1.setEnabled(state);
+        mToggleButton2.setEnabled(state);
+        mCmdButton.setEnabled(state);
+        mCmdText.setEnabled(state);
     }
 }
